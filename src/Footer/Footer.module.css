@@ -1,0 +1,15 @@
+
+.footer {
+    grid-area: f;
+    background-color: #2a425e;
+}
+
+/*.footer {*/
+/*    background-color: #2a425e;*/
+/*    border: 1px solid #212941;*/
+/*    border-radius: 5px;*/
+/*    !*padding: 8px 15px;*!*/
+/*    color: #ffffff;*/
+/*    font-size: 18px;*/
+/*    font-family: roboto;*/
+/*}*/
