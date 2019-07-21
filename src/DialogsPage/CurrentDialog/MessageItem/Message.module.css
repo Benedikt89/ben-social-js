@@ -1,0 +1,33 @@
+
+
+
+.Message {
+    background-color: #fdf5f1;
+    border: 1px solid #212941;
+    border-radius: 5px;
+    padding: 8px 15px;
+    color: #000000;
+    font-size: 22px;
+    font-family: roboto;
+}
+
+.Avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.MessageArea {
+    font-size: 18px;
+    font-family: roboto;
+}
+
+/*.Profile{*/
+/*    background-color: #4d7cae;*/
+/*    border: 1px solid #212941;*/
+/*    border-radius: 5px;*/
+/*    padding: 8px 15px;*/
+/*    color: #ffffff;*/
+/*    font-size: 18px;*/
+/*    font-family: roboto;*/
+/*}*/

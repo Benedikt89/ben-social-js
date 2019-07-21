@@ -1,0 +1,33 @@
+
+.appWrapper {
+    margin: 0;
+    display: grid;
+    grid-template-areas:
+            "h h"
+            "n d"
+            "f f";
+
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: minmax(100px, 150px) 10fr;
+    grid-gap: 10px;
+}
+
+/*@media (min-width: 640px) {*/
+/*    .wrapper {*/
+/*        grid-template-columns: 2fr 4fr;*/
+/*        grid-template-areas:*/
+/*                "header header"*/
+/*                "nav content"*/
+/*                "footer footer"*/
+/*    }*/
+/*}*/
+
+/*.appWrapper > * {*/
+/*    background-color: #28314E;*/
+/*    border: 1px solid #212941;*/
+/*    border-radius: 5px;*/
+/*    padding: 8px 15px;*/
+/*    color: #ffffff;*/
+/*    font-size: 18px;*/
+/*    font-family: roboto;*/
+/*}*/

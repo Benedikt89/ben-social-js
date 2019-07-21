@@ -8,9 +8,9 @@ const Header = () => {
 
             <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Inkscape.logo.svg/390px-Inkscape.logo.svg.png"/>
-            <a href='#$'>Home</a> -
-            <a href='#$'>News Feed</a> -
-            <a href='#$'>Messages</a> -
+            <a>Home</a> -
+            <a>News Feed</a> -
+            <a>Messages</a> -
 
 
         </div>
