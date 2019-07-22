@@ -3,17 +3,20 @@ import s from './Header.module.css';
 
 const Header = () => {
     return (
-        <div className={s.Header}>
+        <header className={s.Header}>
 
+            <div className={s.lable}>
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Inkscape.logo.svg/390px-Inkscape.logo.svg.png"/>
+            </div>
 
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Inkscape.logo.svg/390px-Inkscape.logo.svg.png"/>
-            <a>Home</a> -
-            <a>News Feed</a> -
-            <a>Messages</a> -
+            <div className={s.links}>
+                <a>Home</a> -
+                <a>Player</a> -
+                <a>Friends</a> -
+            </div>
 
-
-        </div>
+        </header>
     );
 }
 

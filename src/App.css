@@ -12,6 +12,9 @@
     grid-gap: 10px;
 }
 
+.appContent {
+    grid-area: p;
+}
 /*@media (min-width: 640px) {*/
 /*    .wrapper {*/
 /*        grid-template-columns: 2fr 4fr;*/

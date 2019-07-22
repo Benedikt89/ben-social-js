@@ -9,7 +9,7 @@ const DialogsPage = () => {
         <div className={s.DialogPage}>
 
             <div className={s.Head}>
-                <p>Dialogs</p>
+                <p>My Dialogs</p>
               </div>
 
 

@@ -10,7 +10,7 @@ const CurrentDialog = () => {
 
                 <textarea></textarea>
                 <button>Send</button>
-
+                <button>Attach</button>
             </div>
 
             <Message/>

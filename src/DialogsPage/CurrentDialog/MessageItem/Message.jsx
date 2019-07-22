@@ -11,6 +11,11 @@ const Message = () => {
 
                 <div className={s.MessageArea}>
                     Hello my Friend.
+                    asdasdasfsg
+                    sdfsdf
+                    sdfsdf
+                    sdfsdf
+                    dfhgfhthgf
                 </div>
 
             </div>

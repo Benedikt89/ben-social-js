@@ -6,15 +6,24 @@ import DialogItem from "./DialogItem/DialogItem";
 const DialogList = () => {
     return (
 
-        <div className={s.DialogList}>
-            my Dialogs
+        <ul className={s.DialogList}>
+            <li className={s.dialogItem}>
+            <DialogItem/>
+            </li>
 
-            <DialogItem/>
-            <DialogItem/>
-            <DialogItem/>
-            <DialogItem/>
+            <li>
+                <DialogItem/>
+            </li>
 
-        </div>
+            <li>
+                <DialogItem/>
+            </li>
+
+            <li>
+                <DialogItem/>
+            </li>
+
+        </ul>
     );
 }
 

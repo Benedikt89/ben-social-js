@@ -3,12 +3,12 @@ import s from './Footer.module.css'
 
 const Footer = () => {
     return (
-        <div className={s.footer}>
+        <footer className={s.footer}>
             <div>
                 <a href='#$'>Rights</a> -
                 <a href='#$'>Contats</a> -
             </div>
-        </div>
+        </footer>
     );
 }
 

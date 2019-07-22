@@ -6,9 +6,10 @@
 
 .item {
     background-color: #3e7250;
-    border: 1px solid #212941;
+    /*border: 1px solid #212941;*/
     border-radius: 5px;
     padding: 8px 25px;
+    margin-top: 10px;
     color: #000000;
     font-size: 18px;
     font-family: roboto;
