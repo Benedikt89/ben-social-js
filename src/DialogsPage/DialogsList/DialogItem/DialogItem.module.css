@@ -14,7 +14,7 @@
 
 }
 
-.Selected {
+.item .selected {
     background-color: rgba(0, 7, 94, 0.9);
 }
 

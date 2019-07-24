@@ -4,6 +4,9 @@ import DialogItem from "./DialogItem/DialogItem";
 
 
 const DialogList = () => {
+
+    
+
     return (
 
         <div className={style.DialogList}>
@@ -14,7 +17,7 @@ const DialogList = () => {
 
         <ul className={style.DialogUl}>
             <li>
-            <DialogItem/>
+                <DialogItem/>
             </li>
 
             <li>
