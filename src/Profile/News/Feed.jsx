@@ -13,8 +13,8 @@ const Feed = () => {
 
                     <NewPost/>
 
-                    <Post/>
-                    <Post/>
+                    <Post message={"OMG1111"} likeCount={10} />
+                    <Post message={"OMG NOOOOOOOOOO11"} likeCount={5}/>
                     <Post/>
                     <Post/>
 

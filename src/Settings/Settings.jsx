@@ -1,10 +1,10 @@
 import React from 'react';
-import s from './Settings.module.css';
+import style from './Settings.module.css';
 
 
 const Settings = () => {
     return (
-        <div>
+        <div className={style.item}>
             SETTINGS
         </div>
     );

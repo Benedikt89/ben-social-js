@@ -1,18 +1,16 @@
 
 .Profile {
-
-    background-color: #ffffff;
     padding: 8px 15px;
 
 }
 
 .Person {
 
-
+    background-color: rgba(0, 0, 0, 0.9);
     border: 1px solid #212941;
     border-radius: 12px;
     padding: 8px 15px;
-    color: #000000;
+    color: #ffffff;
 
     display: grid;
 
@@ -38,6 +36,7 @@
 .Head img {
     height: 350px;
     border-radius: 15px;
+    border: 1px solid black;
 }
 
 

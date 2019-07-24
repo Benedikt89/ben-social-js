@@ -1,12 +1,13 @@
 
 .item {
-    background-color: #fdf5f1;
+    background-color: rgba(0, 0, 0, 0.9);
     border: 1px solid #212941;
     border-radius: 5px;
     padding: 8px 15px;
-    color: #000000;
+    color: #ffffff;
     font-size: 22px;
     font-family: roboto;
+    margin-top: 8px;
 }
 
 .item img {

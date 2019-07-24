@@ -1,20 +1,26 @@
 
 .Nav {
     grid-area: n;
-    background-color: #3e7250;
+    background-color: rgba(0, 4, 22, 0.9);
 }
 
 .item {
-    background-color: #3e7250;
-    /*border: 1px solid #212941;*/
+    background-color: rgba(0, 1, 52, 0.9);
+    border: 1px solid #27b203;
     border-radius: 5px;
     padding: 8px 25px;
     margin-top: 10px;
-    color: #000000;
-    font-size: 18px;
-    font-family: roboto;
+
+
 }
 
-.item {
-    color: #ffffff;
+.item a {
+    font-family: roboto;
+    font-size: 22px;
+    color: #3dff05;
+    text-decoration: none;
+}
+
+.item a.active {
+    color: rgba(0, 205, 253, 0.99);
 }

@@ -1,13 +1,19 @@
 import React from 'react';
-import s from './DialogList.module.css'
+import style from './DialogList.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 
 
 const DialogList = () => {
     return (
 
-        <ul className={s.DialogList}>
-            <li className={s.dialogItem}>
+        <div className={style.DialogList}>
+
+        <div className={style.Head}>
+            <p><b>My Dialogs</b></p>
+        </div>
+
+        <ul className={style.DialogUl}>
+            <li>
             <DialogItem/>
             </li>
 
@@ -24,6 +30,7 @@ const DialogList = () => {
             </li>
 
         </ul>
+        </div>
     );
 }
 

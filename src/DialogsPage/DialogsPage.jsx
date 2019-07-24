@@ -8,10 +8,6 @@ const DialogsPage = () => {
     return (
         <div className={s.DialogPage}>
 
-            <div className={s.Head}>
-                <p>My Dialogs</p>
-              </div>
-
 
             <DialogList/>
             <CurrentDialog/>
