@@ -3,25 +3,33 @@ import s from './Feed.module.css'
 import Post from "./Feed-line/Post";
 import NewPost from "./NewPost/NewPost";
 
-
-const Feed = () => {
-    return (
+class Feed extends React.Component {
 
 
-                <div>
-                    my posts
+    render = () => {
 
-                    <NewPost/>
+        let myFeedPosts = this.props.myFeed.map(
+            post => <Post
+                message={post.content}
+                avatar={post.avatar}
+                likeCount={post.likeCount}
+            />
+        )
 
-                    <Post message={"OMG1111"} likeCount={10} />
-                    <Post message={"OMG NOOOOOOOOOO11"} likeCount={5}/>
-                    <Post/>
-                    <Post/>
+        return (
 
-                </div>
 
-    );
+            <div>
+                <h4>my posts</h4>
+
+                <NewPost/>
+
+                {myFeedPosts}
+
+            </div>
+
+        );
+    }
 }
-
 
 export default Feed;

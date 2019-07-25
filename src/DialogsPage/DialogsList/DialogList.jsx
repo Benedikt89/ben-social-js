@@ -2,40 +2,37 @@ import React from 'react';
 import style from './DialogList.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 
+class DialogList extends React.Component {
 
-const DialogList = () => {
 
-    
+    render = (props) => {
 
-    return (
-
-        <div className={style.DialogList}>
-
-        <div className={style.Head}>
-            <p><b>My Dialogs</b></p>
-        </div>
-
-        <ul className={style.DialogUl}>
+        let DialogsItems = this.props.Users.map(dialog =>
             <li>
-                <DialogItem/>
-            </li>
+                <DialogItem
+                    name={dialog.name}
+                    id={dialog.id}
+                    avatarImg={dialog.avatarImage}
+                />
+            </li>)
 
-            <li>
-                <DialogItem/>
-            </li>
 
-            <li>
-                <DialogItem/>
-            </li>
+        return (
 
-            <li>
-                <DialogItem/>
-            </li>
+            <div className={style.DialogList}>
 
-        </ul>
-        </div>
-    );
+                <div className={style.Head}>
+                    <h3><b>My Dialogs</b></h3>
+                </div>
+
+                <ul className={style.DialogUl}>
+
+                    {DialogsItems}
+
+                </ul>
+            </div>
+        );
+    }
 }
-
 
 export default DialogList;

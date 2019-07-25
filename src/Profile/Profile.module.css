@@ -4,34 +4,6 @@
 
 }
 
-.Person {
-
-    background-color: rgba(0, 0, 0, 0.9);
-    border: 1px solid #212941;
-    border-radius: 12px;
-    padding: 8px 15px;
-    color: #ffffff;
-
-    display: grid;
-
-    grid-template: "ava stats";
-    grid-template-columns: 1fr 8fr;
-    grid-gap: 25px;
-}
-
-.Avatar {
-    grid-area: ava;
-
-}
-
-.PersonStats {
-    grid-area: stats;
-}
-
-.Avatar img {
-    height: 200px;
-    border-radius: 15px;
-}
 
 .Head img {
     height: 350px;

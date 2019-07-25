@@ -1,24 +1,31 @@
 import React from 'react';
 import style from './DialogItem.module.css'
+import {NavLink} from "react-router-dom";
 
 
 
-const DialogItem = () => {
+const DialogItem = (props) => {
+
+    let path = "/DialogsPage/" + props.id;
+    let avatar = props.avatarImg;
+    let name = props.name;
+    let lastMessage = props.lastMessage;
+
     return (
-        <div className={style.item}>
+        <NavLink to={path} className={style.item}>
             <div className={style.Ava}>
-                <img src='https://cdn.freelance.ru/img/portfolio/pics/00/37/9B/3644384.jpg?mt=57607de1'/>
+                <img src={avatar}/>
             </div>
 
             <div className={style.Label}>
-                Clara
+                {name}
             </div>
 
             <div className={style.Preview}>
-                Text of message.
+                'Oh bois!!!!!!!!!!!!!'
             </div>
 
-        </div>
+        </NavLink>
 
     );
 }
