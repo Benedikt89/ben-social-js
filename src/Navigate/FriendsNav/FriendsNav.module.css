@@ -1,0 +1,22 @@
+
+.friendsBlock {
+
+    grid-template-rows: 1fr 1fr 1fr;
+    display: grid;
+
+}
+
+.ava {
+
+    margin-top: 10px;
+
+}
+
+.ava img {
+    position: relative;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+

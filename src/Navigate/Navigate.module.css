@@ -24,3 +24,8 @@
 .item a.active {
     color: rgba(0, 205, 253, 0.99);
 }
+
+.friends {
+    padding: 8px 25px;
+    margin-top: 10px;
+}

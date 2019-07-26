@@ -9,6 +9,7 @@ import DialogsPage from "./DialogsPage/DialogsPage";
 import News from "./News/News";
 import Music from "./Music/Music";
 import Settings from "./Settings/Settings";
+import Friends from "./Friends/Friends";
 
 
 const App = (props) => {
@@ -17,10 +18,10 @@ const App = (props) => {
  //   let asd = props.appState.messages;
 
     return (
-        <BrowserRouter>
+
             <div className='appWrapper'>
                 <Header/>
-                <Navigate/>
+                <Navigate friends={props.state.users}/>
 
                 <main className='appContent'>
                     <Route path="/DialogsPage"
@@ -29,10 +30,11 @@ const App = (props) => {
                                messages={props.state.messages}/>}/>
                     <Route path="/Profile"
                            render={() => <Profile
-                               //    profileInfo ={this.props.profileInfo}
+                               profileInfo ={props.users}
                                myFeed={props.state.myFeed}/>}/>
                     <Route path="/News" render={() => <News/>}/>
                     <Route path="/Music" component={Music}/>
+                    <Route path="/Friends" component={Friends}/>
                     <Route path="/Settings" component={Settings}/>
 
 
@@ -41,7 +43,7 @@ const App = (props) => {
                 <Footer/>
 
             </div>
-        </BrowserRouter>
+
     );
 };
 

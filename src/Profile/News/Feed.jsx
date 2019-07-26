@@ -3,18 +3,15 @@ import s from './Feed.module.css'
 import Post from "./Feed-line/Post";
 import NewPost from "./NewPost/NewPost";
 
-class Feed extends React.Component {
+    const Feed = (props) => {
 
-
-    render = () => {
-
-        let myFeedPosts = this.props.myFeed.map(
+        let myFeedPosts = props.myFeed.map(
             post => <Post
                 message={post.content}
-                avatar={post.avatar}
+                avatar={post.avatarImage}
                 likeCount={post.likeCount}
             />
-        )
+        );
 
         return (
 
@@ -29,7 +26,7 @@ class Feed extends React.Component {
             </div>
 
         );
-    }
-}
+    };
+
 
 export default Feed;

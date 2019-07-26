@@ -3,9 +3,7 @@ import style from './Profile.module.css';
 import Feed from "./News/Feed";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-class Profile extends React.Component {
-
-    render = (props) => {
+ const Profile = (props) => {
 
 
         return (
@@ -18,11 +16,11 @@ class Profile extends React.Component {
 
                 <ProfileInfo/>
 
-                <Feed myFeed={this.props.myFeed}/>
+                <Feed myFeed={props.myFeed}/>
 
             </div>
         );
-    }
-}
+    };
+
 
 export default Profile;
