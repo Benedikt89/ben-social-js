@@ -11,56 +11,39 @@ import Music from "./Music/Music";
 import Settings from "./Settings/Settings";
 
 
-class App extends React.Component {
-
-    // selectedUser = 4;
-    // profileInfo = this.state.map(user => {
-    //     if (user.id = this.selectedUser) {
-    //         user.
-    //     }
-    // } )
+const App = (props) => {
 
 
-    // name: 'Grigory',
-    // id: 4,
-    // avatarImage: 'https://playjoor.com/assets/avatar/jenny.jpg',
-    // age: 43,
-    // birthDate: '25 / 07 / 1987',
-    // profession: 'trubouklad4ik',
-    // education: 'some schoon on east',
+ //   let asd = props.appState.messages;
+
+    return (
+        <BrowserRouter>
+            <div className='appWrapper'>
+                <Header/>
+                <Navigate/>
+
+                <main className='appContent'>
+                    <Route path="/DialogsPage"
+                           render={() => <DialogsPage
+                               users={props.state.users}
+                               messages={props.state.messages}/>}/>
+                    <Route path="/Profile"
+                           render={() => <Profile
+                               //    profileInfo ={this.props.profileInfo}
+                               myFeed={props.state.myFeed}/>}/>
+                    <Route path="/News" render={() => <News/>}/>
+                    <Route path="/Music" component={Music}/>
+                    <Route path="/Settings" component={Settings}/>
 
 
+                </main>
 
-    myFeed = this.myFeed;
-    messages = this.messages;
-    Users = this.Users;
+                <Footer/>
 
-    render = () => {
+            </div>
+        </BrowserRouter>
+    );
+};
 
-
-
-        return (
-            <BrowserRouter>
-                <div className='appWrapper'>
-                    <Header/>
-                    <Navigate/>
-
-                    <main className='appContent'>
-                        <Route path="/DialogsPage" render={() => <DialogsPage Users={this.props.Users} messages={this.props.messages} />} />
-                        <Route path="/Profile" render={() => <Profile profileInfo ={this.props.profileInfo} myFeed={this.props.myFeed}/>} />
-                        <Route path="/News" render={()=> <News />}/>
-                        <Route path="/Music" component={Music}/>
-                        <Route path="/Settings" component={Settings}/>
-
-
-                    </main>
-
-                    <Footer/>
-
-                </div>
-            </BrowserRouter>
-        );
-    }
-}
 
 export default App;

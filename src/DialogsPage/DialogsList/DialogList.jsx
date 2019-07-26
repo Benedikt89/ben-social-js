@@ -2,12 +2,9 @@ import React from 'react';
 import style from './DialogList.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 
-class DialogList extends React.Component {
+const DialogList = (props) => {
 
-
-    render = (props) => {
-
-        let DialogsItems = this.props.Users.map(dialog =>
+        let DialogsItems = props.users.map(dialog =>
             <li>
                 <DialogItem
                     name={dialog.name}
@@ -32,7 +29,7 @@ class DialogList extends React.Component {
                 </ul>
             </div>
         );
-    }
-}
+    };
+
 
 export default DialogList;
