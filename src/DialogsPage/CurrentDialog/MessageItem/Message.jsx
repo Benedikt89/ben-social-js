@@ -1,26 +1,27 @@
 import React from 'react';
 import s from './Message.module.css'
 
+class Message extends React.Component {
 
-const Message = () => {
-    return (
+    render = (props) => {
+
+        let messageContent = this.props.messageContent;
+        let avatarImg = this.props.avatarImage;
+
+        return (
+
             <div className={s.Message}>
                 <div className={s.Avatar}>
-                    <img src='https://cdn.freelance.ru/img/portfolio/pics/00/37/9B/3644384.jpg?mt=57607de1'/>
+                    <img src={avatarImg}/>
                 </div>
 
                 <div className={s.MessageArea}>
-                    Hello my Friend.
-                    asdasdasfsg
-                    sdfsdf
-                    sdfsdf
-                    sdfsdf
-                    dfhgfhthgf
+                    {messageContent}
                 </div>
 
             </div>
-    );
+        );
+    }
 }
-
 
 export default Message;

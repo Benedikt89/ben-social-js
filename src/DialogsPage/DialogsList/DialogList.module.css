@@ -3,19 +3,32 @@
 
 .DialogList {
     grid-area: dList;
-    background-color: #fdf5f1;
-    color: #000000;
-    font-size: 22px;
+    color: #ffffff;
+    font-size: 32px;
     font-family: roboto;
     list-style: none;
     padding-left: 0;
+    border-right-style: solid;
+    border-right-width: 1px;
 }
 
-.dialogItem {
-    padding: 0;
+.DialogUl {
+    padding-left: 10px;
+    margin-right: 15px;
 }
 
+.Head {
+    grid-area: head;
+    text-align: center;
+    text-shadow: #212941;
+    font-size: 26px;
 
+}
+
+.Head img {
+    height: 350px;
+    border-radius: 15px;
+}
 /*.Profile{*/
 /*    background-color: #4d7cae;*/
 /*    border: 1px solid #212941;*/

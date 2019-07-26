@@ -2,13 +2,12 @@
 
 
 .Message {
-    background-color: #fdf5f1;
-
-    color: #000000;
+    color: #ffffff;
     font-size: 22px;
     font-family: roboto;
     display: grid;
     grid-gap: 10px;
+    grid-template-columns: 50px 0.5fr;
     grid-template-areas:
             "ava cont";
 }
@@ -35,6 +34,8 @@
     margin: 10px;
     font-size: 18px;
     font-family: roboto;
+
+    background-color: rgba(8, 20, 46, 0.9);
 }
 
 /*.Profile{*/

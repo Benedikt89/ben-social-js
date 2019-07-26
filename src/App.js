@@ -9,31 +9,43 @@ import DialogsPage from "./DialogsPage/DialogsPage";
 import News from "./News/News";
 import Music from "./Music/Music";
 import Settings from "./Settings/Settings";
+import Friends from "./Friends/Friends";
 
 
 const App = (props) => {
+
+
+ //   let asd = props.appState.messages;
+
     return (
-        <BrowserRouter>
-        <div className='appWrapper'>
-            <Header/>
-            <Navigate/>
 
-            <main className='appContent'>
-                <Route path="/DialogsPage" component={DialogsPage} />
-                <Route path="/Profile" component={Profile}/>
-                <Route path="/News" component={News}/>
-                <Route path="/Music" component={Music}/>
-                <Route path="/Settings" component={Settings}/>
+            <div className='appWrapper'>
+                <Header/>
+                <Navigate friends={props.state.users}/>
+
+                <main className='appContent'>
+                    <Route path="/DialogsPage"
+                           render={() => <DialogsPage
+                               users={props.state.users}
+                               messages={props.state.messages}/>}/>
+                    <Route path="/Profile"
+                           render={() => <Profile
+                               profileInfo ={props.users}
+                               myFeed={props.state.myFeed}/>}/>
+                    <Route path="/News" render={() => <News/>}/>
+                    <Route path="/Music" component={Music}/>
+                    <Route path="/Friends" component={Friends}/>
+                    <Route path="/Settings" component={Settings}/>
 
 
-            </main>
+                </main>
 
-            <Footer/>
+                <Footer/>
 
-        </div>
-        </BrowserRouter>
+            </div>
+
     );
-}
+};
 
 
 export default App;

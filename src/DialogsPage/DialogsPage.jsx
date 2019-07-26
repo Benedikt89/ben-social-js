@@ -1,25 +1,24 @@
 import React from 'react';
-import s from './DialogsPage.module.css';
+import style from './DialogsPage.module.css';
 import DialogList from "./DialogsList/DialogList";
 import CurrentDialog from "./CurrentDialog/CurrentDialog";
 
 
-const DialogsPage = () => {
-    return (
-        <div className={s.DialogPage}>
 
-            <div className={s.Head}>
-                <p>My Dialogs</p>
-              </div>
+    const DialogsPage = (props) => {
 
 
-            <DialogList/>
-            <CurrentDialog/>
+        return (
+            <div className={style.DialogPage}>
 
 
-        </div>
-    );
-}
+                <DialogList users={props.users}/>
+                <CurrentDialog messages={props.messages}/>
+
+
+            </div>
+        );
+    }
 
 
 export default DialogsPage;

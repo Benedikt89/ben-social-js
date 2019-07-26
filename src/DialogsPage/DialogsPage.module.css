@@ -3,25 +3,14 @@
 
     display: grid;
     grid-template-areas:
-            "head currentD"
             "dList currentD";
-    background-color: #ffffff;
+
     padding: 8px 15px;
-    grid-column-gap: 29px;
+    grid-column-gap: 20px;
 
 }
 
-.Head {
-    grid-area: head;
-    text-align: center;
-    text-shadow: #212941;
-    font-size: 26px;
-}
 
-.Head img {
-    height: 350px;
-    border-radius: 15px;
-}
 
 
 /*.Profile{*/

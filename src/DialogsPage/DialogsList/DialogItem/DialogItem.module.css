@@ -1,8 +1,10 @@
 .item {
-    background-color: #fdf5f1;
-
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid #2a425e;
     padding: 8px 15px;
-    color: #000000;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #ffffff;
     font-size: 22px;
     font-family: roboto;
     grid-template-areas:
@@ -12,7 +14,9 @@
 
 }
 
-
+.item .selected {
+    background-color: rgba(0, 7, 94, 0.9);
+}
 
 .Label {
     grid-area: label;

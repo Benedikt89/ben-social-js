@@ -1,29 +1,55 @@
 import React from 'react';
-import s from './Navigate.module.css'
+import style from './Navigate.module.css'
+import {NavLink} from "react-router-dom";
+import FriendsNav from "./FriendsNav/FriendsNav";
 
-const Navigate = () => {
+const Navigate = (props) => {
+
+
+
     return (
-        <nav className={s.Nav}>
+        <nav className={style.Nav}>
 
-            <div className={s.item}>
-                <a href="/Profile">Profile</a>
-            </div>
-            <div className={s.item}>
-                <a href="/DialogsPage">Messages</a>
-            </div>
-
-            <div className={s.item}>
-                <a href="/News">News</a>
+            <div className={style.item}>
+                <NavLink to="/Profile" activeClassName={style.active}>
+                    Profile
+                </NavLink>
             </div>
 
-            <div className={s.item}>
-                <a href="/Music">Music</a>
+            <div className={style.item}>
+                <NavLink to="/DialogsPage" activeClassName={style.active}>
+                    Messages
+                </NavLink>
             </div>
 
-            <div className={s.item}>
-                <a href="Settings">Settings</a>
+            <div className={style.item}>
+                <NavLink to="/News" activeClassName={style.active}>
+                    News
+                </NavLink>
             </div>
 
+            <div className={style.item}>
+                <NavLink to="/Music" activeClassName={style.active}>
+                    Music
+                </NavLink>
+            </div>
+
+            <div className={style.item}>
+                <NavLink to="/Friends" activeClassName={style.active}>
+                    Friends
+                </NavLink>
+            </div>
+
+
+            <div className={style.friends}>
+                <FriendsNav friends={props.friends} />
+            </div>
+
+            <div className={style.item}>
+                <NavLink to="/Settings" activeClassName={style.active}>
+                    Settings
+                </NavLink>
+            </div>
         </nav>
     );
 }

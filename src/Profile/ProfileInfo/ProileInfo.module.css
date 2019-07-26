@@ -1,19 +1,32 @@
 
-.item {
+
+.Person {
+
     background-color: rgba(0, 0, 0, 0.9);
     border: 1px solid #212941;
-    border-radius: 5px;
+    border-radius: 12px;
     padding: 8px 15px;
     color: #ffffff;
-    font-size: 22px;
-    font-family: roboto;
-    margin-top: 8px;
+
+    display: grid;
+
+    grid-template: "ava stats";
+    grid-template-columns: 1fr 8fr;
+    grid-gap: 25px;
 }
 
-.item img {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
+.Avatar {
+    grid-area: ava;
+
+}
+
+.PersonStats {
+    grid-area: stats;
+}
+
+.Avatar img {
+    height: 200px;
+    border-radius: 15px;
 }
 
 

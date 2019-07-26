@@ -1,19 +1,19 @@
 import React from 'react';
-import s from './Header.module.css';
+import style from './Header.module.css';
 
 const Header = () => {
     return (
-        <header className={s.Header}>
+        <header className={style.Header}>
 
-            <div className={s.lable}>
+            <div className={style.lable}>
                 <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Inkscape.logo.svg/390px-Inkscape.logo.svg.png"/>
             </div>
 
-            <div className={s.links}>
+            <div className={style.links}>
                 <a>Home</a> -
-                <a>Player</a> -
-                <a>Friends</a> -
+                <a>Player</a>
+
             </div>
 
         </header>
