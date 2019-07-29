@@ -1,27 +1,27 @@
 import React from 'react';
-import s from './Message.module.css'
+import style from './Message.module.css'
 
-class Message extends React.Component {
 
-    render = (props) => {
+    const Message = (props) => {
 
         let messageContent = this.props.messageContent;
         let avatarImg = this.props.avatarImage;
 
         return (
 
-            <div className={s.Message}>
-                <div className={s.Avatar}>
+            <div className={style.Message}>
+                <div className={style.Avatar}>
                     <img src={avatarImg}/>
                 </div>
 
-                <div className={s.MessageArea}>
+                <div className={style.MessageArea}>
                     {messageContent}
+
                 </div>
 
             </div>
         );
-    }
-}
+    };
+
 
 export default Message;
