@@ -3,6 +3,7 @@ import style from './Profile.module.css';
 import Feed from "./News/Feed";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
+
  const Profile = (props) => {
 
 
@@ -16,7 +17,8 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
                 <ProfileInfo/>
 
-                <Feed myFeed={props.myFeed}/>
+                <Feed myFeed={props.myFeed}
+                      addNewPost={props.addNewPost}/>
 
             </div>
         );

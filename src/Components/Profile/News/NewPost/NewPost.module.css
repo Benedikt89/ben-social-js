@@ -1,7 +1,5 @@
 
-
-
-.NewPost {
+.newPost {
     background-color: rgba(8, 20, 46, 0.9);
     border: 1px solid #212941;
     border-radius: 5px;
@@ -9,13 +7,35 @@
     color: #000000;
     font-size: 22px;
     font-family: roboto;
+    grid-template-columns: 80px 1fr;
+    grid-template-areas:
+            "avatar text"
+            "avatar button";
+    display: grid;
 }
 
-.NewPost img {
+.avatar {
+    grid-area: avatar;
+}
+
+.avatar img {
     width: 60px;
     height: 60px;
     border-radius: 30px;
+
 }
+
+.text {
+    grid-area: text;
+    border-radius: 5px;
+    border-spacing: 200px;
+}
+
+.button {
+    grid-area: button;
+
+}
+
 
 
 /*.Profile{*/

@@ -4,8 +4,9 @@ import style from './Message.module.css'
 
     const Message = (props) => {
 
-        let messageContent = this.props.messageContent;
-        let avatarImg = this.props.avatarImage;
+
+        let messageContent = props.messageContent;
+        let avatarImg = props.avatarImage;
 
         return (
 

@@ -1,19 +1,18 @@
 import React from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
 import './App.css';
-import Header from "./Header/Header";
-import Navigate from "./Navigate/Navigate";
-import Footer from "./Footer/Footer";
-import Profile from "./Profile/Profile";
-import DialogsPage from "./DialogsPage/DialogsPage";
-import News from "./News/News";
-import Music from "./Music/Music";
-import Settings from "./Settings/Settings";
-import Friends from "./Friends/Friends";
+import Header from "./Components/Header/Header";
+import Navigate from "./Components/Navigate/Navigate";
+import Footer from "./Components/Footer/Footer";
+import Profile from "./Components/Profile/Profile";
+import DialogsPage from "./Components/DialogsPage/DialogsPage";
+import News from "./Components/News/News";
+import Music from "./Components/Music/Music";
+import Settings from "./Components/Settings/Settings";
+import Friends from "./Components/Friends/Friends";
 
 
 const App = (props) => {
-
 
  //   let asd = props.appState.messages;
 
@@ -31,7 +30,9 @@ const App = (props) => {
                     <Route path="/Profile"
                            render={() => <Profile
                                profileInfo ={props.users}
-                               myFeed={props.state.myFeed}/>}/>
+                               myFeed={props.state.myFeed}
+                               addNewPost={props.addNewPost}
+                           />}/>
                     <Route path="/News" render={() => <News/>}/>
                     <Route path="/Music" component={Music}/>
                     <Route path="/Friends" component={Friends}/>

@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Feed.module.css'
+import style from './Feed.module.css'
 import Post from "./Feed-line/Post";
 import NewPost from "./NewPost/NewPost";
 
@@ -19,7 +19,7 @@ import NewPost from "./NewPost/NewPost";
             <div>
                 <h4>my posts</h4>
 
-                <NewPost/>
+                <NewPost addNewPost={props.addNewPost}/>
 
                 {myFeedPosts}
 

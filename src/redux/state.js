@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../rerender";
+
 let state = {
     users: [
         {
@@ -61,34 +63,11 @@ let state = {
         {
             id: 1006,
             userId: 2,
-            messageContent: '<img src=\'https://cdn.freelance.ru/img/portfolio/pics/00/37/9B/3644384.jpg?mt=57607de1\'/>',
+            messageContent: '<img src=\'https://cdn.freelance.ru/img/portfolio/pics/00/37/9B/3644384.jpg?mt=57607de1\' />',
             avatarImage: 'https://www.w3schools.com/howto/img_avatar2.png',
         },
     ],
-    myFeed: [
-        {
-            id: 9001,
-            userId: 3,
-            content: 'OMG1111',
-            likeCount: 22,
-            avatarImage: 'https://www.w3schools.com/howto/img_avatar2.png',
-        },
-        {
-            id: 9001,
-            userId: 4,
-            content: 'OMG NOOOOOOOOOO11',
-            likeCount: 2,
-            avatarImage: 'https://playjoor.com/assets/avatar/jenny.jpg',
-        },
-        {
-            id: 9001,
-            userId: 1,
-            content: 'How long, how long will i slide?',
-            likeCount: 11,
-            avatarImage: 'https://www.w3schools.com/howto/img_avatar2.png',
-        }
 
-    ],
     sideBar: [
         {
             name: 'Vasya',
@@ -116,8 +95,45 @@ let state = {
 
         },
     ],
+    myFeed: [
+        {
+            id: 9001,
+            userId: 3,
+            content: 'OMG1111',
+            likeCount: 22,
+            avatarImage: 'https://www.w3schools.com/howto/img_avatar2.png',
+        },
+        {
+            id: 9002,
+            userId: 4,
+            content: 'OMG NOOOOOOOOOO11',
+            likeCount: 2,
+            avatarImage: 'https://playjoor.com/assets/avatar/jenny.jpg',
+        },
+        {
+            id: 9003,
+            userId: 1,
+            content: 'How long, how long will i slide?',
+            likeCount: 11,
+            avatarImage: 'https://www.w3schools.com/howto/img_avatar2.png',
+        }
+
+    ],
 
 
+};
+
+
+export let addNewPost = (text) => {
+    let newPost = {id: state.myFeed.length + 9001,
+        userId: 1,
+        content: text,
+        likeCount: 0,
+        avatarImage: 'https://www.w3schools.com/howto/img_avatar2.png'};
+
+    state.myFeed.push(newPost);
+
+    rerenderEntireTree(state);
 };
 
 export default state;
