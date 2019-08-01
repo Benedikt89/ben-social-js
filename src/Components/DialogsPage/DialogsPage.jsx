@@ -13,7 +13,9 @@ import CurrentDialog from "./CurrentDialog/CurrentDialog";
 
 
                 <DialogList users={props.users}/>
-                <CurrentDialog messages={props.messages}/>
+                <CurrentDialog
+                    sendNewMessage={props.sendNewMessage}
+                    messages={props.messages}/>
 
 
             </div>

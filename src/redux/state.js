@@ -1,4 +1,13 @@
-import {rerenderEntireTree} from "../rerender";
+
+
+let rerenderEntireTree = () => {
+
+};
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
+    //pattern observer
+};
 
 let state = {
     users: [
@@ -119,21 +128,46 @@ let state = {
         }
 
     ],
+    newPostText: [''],
 
 
 };
 
+export const textHolder = (text) => {
+    state.newPostText = text;
+    console.log(text);
+    rerenderEntireTree();
+};
 
-export let addNewPost = (text) => {
+export const addNewPost = () => {
     let newPost = {id: state.myFeed.length + 9001,
         userId: 1,
-        content: text,
+        content: state.newPostText,
         likeCount: 0,
         avatarImage: 'https://www.w3schools.com/howto/img_avatar2.png'};
 
-    state.myFeed.push(newPost);
+    state.myFeed.unshift(newPost);
 
-    rerenderEntireTree(state);
+    rerenderEntireTree();
+};
+
+export const sendNewMessage = (text) => {
+    let newMessage = {
+        id: state.messages.length + 1001,
+        userId: 1,
+        messageContent: text,
+        avatarImage: 'https://playjoor.com/assets/avatar/jenny.jpg',
+    };
+
+    state.messages.unshift(newMessage);
+
+    rerenderEntireTree();
+
+    // let newMessages = [...state.messages, newMessage];
+    // state.setState( {
+    //     messages: newMessages
+    // });
+
 };
 
 export default state;

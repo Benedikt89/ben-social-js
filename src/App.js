@@ -23,15 +23,20 @@ const App = (props) => {
                 <Navigate friends={props.state.users}/>
 
                 <main className='appContent'>
+
                     <Route path="/DialogsPage"
                            render={() => <DialogsPage
+                               sendNewMessage={props.sendNewMessage}
                                users={props.state.users}
                                messages={props.state.messages}/>}/>
+
                     <Route path="/Profile"
                            render={() => <Profile
                                profileInfo ={props.users}
                                myFeed={props.state.myFeed}
+                               newPostText={props.state.newPostText}
                                addNewPost={props.addNewPost}
+                               textHolder={props.textHolder}
                            />}/>
                     <Route path="/News" render={() => <News/>}/>
                     <Route path="/Music" component={Music}/>

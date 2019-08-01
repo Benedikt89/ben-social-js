@@ -19,7 +19,10 @@ import NewPost from "./NewPost/NewPost";
             <div>
                 <h4>my posts</h4>
 
-                <NewPost addNewPost={props.addNewPost}/>
+                <NewPost
+                    newPostText={props.newPostText}
+                    textHolder={props.textHolder}
+                    addNewPost={props.addNewPost}/>
 
                 {myFeedPosts}
 

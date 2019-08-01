@@ -18,6 +18,8 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
                 <ProfileInfo/>
 
                 <Feed myFeed={props.myFeed}
+                      newPostText={props.newPostText}
+                      textHolder={props.textHolder}
                       addNewPost={props.addNewPost}/>
 
             </div>

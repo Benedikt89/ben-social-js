@@ -6,48 +6,59 @@ import FriendsNav from "./FriendsNav/FriendsNav";
 const Navigate = (props) => {
 
 
-
     return (
         <nav className={style.Nav}>
 
-            <div className={style.item}>
+            <div className={style.click}>
                 <NavLink to="/Profile" activeClassName={style.active}>
-                    Profile
+                    <div className={style.item}>
+                        Profile
+                    </div>
                 </NavLink>
             </div>
 
-            <div className={style.item}>
+            <div className={style.click}>
                 <NavLink to="/DialogsPage" activeClassName={style.active}>
-                    Messages
+                    <div className={style.item}>
+                        Messages
+                    </div>
                 </NavLink>
             </div>
 
-            <div className={style.item}>
+            <div className={style.click}>
                 <NavLink to="/News" activeClassName={style.active}>
-                    News
+                    <div className={style.item}>
+                        News
+                    </div>
                 </NavLink>
             </div>
 
-            <div className={style.item}>
+            <div className={style.click}>
                 <NavLink to="/Music" activeClassName={style.active}>
-                    Music
+                    <div className={style.item}>
+                        Music
+                    </div>
                 </NavLink>
             </div>
 
-            <div className={style.item}>
+            <div className={style.click}>
                 <NavLink to="/Friends" activeClassName={style.active}>
-                    Friends
+                    <div className={style.item}>
+                        Friends
+                    </div>
                 </NavLink>
             </div>
 
 
             <div className={style.friends}>
-                <FriendsNav friends={props.friends} />
+                <FriendsNav friends={props.friends}/>
             </div>
 
-            <div className={style.item}>
+            <div className={style.click}>
                 <NavLink to="/Settings" activeClassName={style.active}>
-                    Settings
+                    <div className={style.item}>
+                        Settings
+                    </div>
                 </NavLink>
             </div>
         </nav>

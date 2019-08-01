@@ -4,6 +4,13 @@ import Message from "./MessageItem/Message";
 
 const CurrentDialog = (props) => {
 
+    let newMessageElement = React.createRef();
+    let sendMessage = () => {
+        let text = newMessageElement.current.value;
+        props.sendNewMessage(text);
+        newMessageElement.current.value = '';
+    };
+
     let currentMessages = props.messages.map(unit =>
         <Message messageContent={unit.messageContent}
                  avatarImage={unit.avatarImage}
@@ -13,10 +20,14 @@ const CurrentDialog = (props) => {
         <div className={style.DialogArea}>
             <div className={style.NewPost}>
 
-                <textarea></textarea>
-                <div>
-                    <button>Send</button>
-                    <button>Attach</button>
+                <div className={style.userAvatar}>
+                    <img src={props.messages[0].avatarImage} />
+                </div>
+
+                <textarea className={style.textArea} ref={newMessageElement}></textarea>
+                <div className={style.buttons}>
+                    <button onClick={sendMessage} className={style.sendB} >Send</button>
+                    <button className={style.attachB}>Attach</button>
                 </div>
             </div>
 

@@ -1,12 +1,17 @@
 
 .Profile {
     padding: 8px 15px;
-
 }
 
+.Head {
+    margin: auto;
+   padding: inherit;
+}
 
 .Head img {
-    height: 350px;
+
+    max-width: 1100px;
+    min-width: 900px;
     border-radius: 15px;
     border: 1px solid black;
 }

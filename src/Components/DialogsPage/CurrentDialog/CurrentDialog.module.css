@@ -2,6 +2,8 @@
 .DialogArea {
     grid-area: currentD;
 
+
+
 }
 
 .NewPost {
@@ -12,15 +14,38 @@
     color: #000000;
     font-size: 22px;
     font-family: roboto;
+    grid-template-columns: 80px 1fr 1fr;
+
+    grid-template-areas:
+            "avatar text"
+            "avatar buttons"
+            ;
+    display: grid;
 }
 
-.NewPost img {
+.userAvatar img {
+    grid-area: avatar;
     width: 60px;
     height: 60px;
     border-radius: 30px;
 }
 
+.textArea {
+    grid-area: text;
+    border-radius: 5px;
+}
 
+.buttons {
+    grid-area: buttons;
+}
+
+.attachB {
+    margin: 10px;
+}
+
+.sendB{
+    margin: 10px;
+}
 /*.Profile{*/
 /*    background-color: #4d7cae;*/
 /*    border: 1px solid #212941;*/

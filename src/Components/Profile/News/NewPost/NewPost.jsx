@@ -8,10 +8,15 @@ const NewPost = (props) => {
     let newPostElement = React.createRef();
 
 
-    let addPost = () => {
+    let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.addNewPost(text);
-        newPostElement.current.value = '';
+        props.textHolder(text);
+    };
+
+
+    let addPost = () => {
+        props.addNewPost();
+        props.textHolder('');
     };
 
     return (
@@ -24,7 +29,10 @@ const NewPost = (props) => {
                 <img src='https://cdn.freelance.ru/img/portfolio/pics/00/37/9B/3644384.jpg?mt=57607de1'/>
                 </div>
 
-                <textarea className={style.text} ref={newPostElement}></textarea>
+                <textarea className={style.text}
+                          ref={newPostElement}
+                          onChange={onPostChange}
+                          value={props.newPostText}/>
 
                 <div className={style.button}>
                 <button onClick={ addPost } >Post</button>
