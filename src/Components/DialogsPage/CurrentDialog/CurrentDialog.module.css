@@ -1,9 +1,8 @@
 
 .DialogArea {
     grid-area: currentD;
-
-
-
+background-color: rgba(0, 0, 0, 0.04);
+    color: white;
 }
 
 .NewPost {
@@ -33,6 +32,8 @@
 .textArea {
     grid-area: text;
     border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.69);
+    color: white;
 }
 
 .buttons {
