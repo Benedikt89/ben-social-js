@@ -1,7 +1,6 @@
 import React from 'react';
-import style from './Feed.module.css'
 import Post from "./Feed-line/Post";
-import NewPost from "./NewPost/NewPost";
+import NewPostContainer from "./NewPost/NewPostContainer";
 
     const Feed = (props) => {
 
@@ -19,10 +18,7 @@ import NewPost from "./NewPost/NewPost";
             <div>
                 <h4>my posts</h4>
 
-                <NewPost
-                    newPostText={props.newPostText}
-                    textHolder={props.textHolder}
-                    addNewPost={props.addNewPost}/>
+                <NewPostContainer />
 
                 {myFeedPosts}
 

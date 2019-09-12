@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Profile.module.css';
-import Feed from "./News/Feed";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import FeedContainer from "./News/FeedContainer";
 
 
  const Profile = (props) => {
@@ -17,10 +17,7 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
                 <ProfileInfo/>
 
-                <Feed myFeed={props.myFeed}
-                      newPostText={props.newPostText}
-                      textHolder={props.textHolder}
-                      addNewPost={props.addNewPost}/>
+                <FeedContainer  />
 
             </div>
         );

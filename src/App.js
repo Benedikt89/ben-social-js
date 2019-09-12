@@ -1,43 +1,32 @@
 import React from 'react';
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import './App.css';
 import Header from "./Components/Header/Header";
 import Navigate from "./Components/Navigate/Navigate";
 import Footer from "./Components/Footer/Footer";
 import Profile from "./Components/Profile/Profile";
-import DialogsPage from "./Components/DialogsPage/DialogsPage";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
 import Friends from "./Components/Friends/Friends";
+import DialogsPageContainer from "./Components/DialogsPage/DialogsPageContainer";
 
 
 const App = (props) => {
-
- //   let asd = props.appState.messages;
 
     return (
 
             <div className='appWrapper'>
                 <Header/>
-                <Navigate friends={props.state.users}/>
+                <Navigate />
 
                 <main className='appContent'>
 
                     <Route path="/DialogsPage"
-                           render={() => <DialogsPage
-                               sendNewMessage={props.sendNewMessage}
-                               users={props.state.users}
-                               messages={props.state.messages}/>}/>
+                           render={() => <DialogsPageContainer />}/>
 
                     <Route path="/Profile"
-                           render={() => <Profile
-                               profileInfo ={props.users}
-                               myFeed={props.state.myFeed}
-                               newPostText={props.state.newPostText}
-                               addNewPost={props.addNewPost}
-                               textHolder={props.textHolder}
-                           />}/>
+                           render={() => <Profile />}/>
                     <Route path="/News" render={() => <News/>}/>
                     <Route path="/Music" component={Music}/>
                     <Route path="/Friends" component={Friends}/>

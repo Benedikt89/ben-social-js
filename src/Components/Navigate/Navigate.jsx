@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Navigate.module.css'
 import {NavLink} from "react-router-dom";
-import FriendsNav from "./FriendsNav/FriendsNav";
+import FriendsNavContainer from "./FriendsNav/FriendsNavContainer";
 
 const Navigate = (props) => {
 
@@ -51,7 +51,7 @@ const Navigate = (props) => {
 
 
             <div className={style.friends}>
-                <FriendsNav friends={props.friends}/>
+                <FriendsNavContainer />
             </div>
 
             <div className={style.click}>

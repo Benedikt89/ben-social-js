@@ -4,24 +4,12 @@ import style from './NewPost.module.css'
 
 const NewPost = (props) => {
 
-
-    let newPostElement = React.createRef();
-
-
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.textHolder(text);
+    let onInput = (e) => {
+        props.onPostChange(e.target.value);
     };
 
-
-    let addPost = () => {
-        props.addNewPost();
-        props.textHolder('');
-    };
-
+    
     return (
-
-
 
             <div className={style.newPost}>
 
@@ -30,12 +18,11 @@ const NewPost = (props) => {
                 </div>
 
                 <textarea className={style.text}
-                          ref={newPostElement}
-                          onChange={onPostChange}
+                          onChange={onInput}
                           value={props.newPostText}/>
 
                 <div className={style.button}>
-                <button onClick={ addPost } >Post</button>
+                <button onClick={ props.addPost } >Post</button>
                 </div>
 
             </div>

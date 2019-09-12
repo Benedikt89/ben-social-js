@@ -7,7 +7,7 @@ const CurrentDialog = (props) => {
     let newMessageElement = React.createRef();
     let sendMessage = () => {
         let text = newMessageElement.current.value;
-        props.sendNewMessage(text);
+        props.sendMessage(text);
         newMessageElement.current.value = '';
     };
 

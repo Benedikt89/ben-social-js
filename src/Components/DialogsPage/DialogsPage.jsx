@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './DialogsPage.module.css';
 import DialogList from "./DialogsList/DialogList";
-import CurrentDialog from "./CurrentDialog/CurrentDialog";
+import CurrentDialogContainer from "./CurrentDialog/CurrentDialogContainer";
 
 
 
@@ -13,9 +13,8 @@ import CurrentDialog from "./CurrentDialog/CurrentDialog";
 
 
                 <DialogList users={props.users}/>
-                <CurrentDialog
-                    sendNewMessage={props.sendNewMessage}
-                    messages={props.messages}/>
+                <CurrentDialogContainer
+                    store={props.store}/>
 
 
             </div>
