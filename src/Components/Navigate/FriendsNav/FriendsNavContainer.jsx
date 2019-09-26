@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
     return{
-        friends: state.friendsReducer.users,
+        users: state.friendsReducer.users,
     }
 };
 let mapDispatchToProps = (state) => {

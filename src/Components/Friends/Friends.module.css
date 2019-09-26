@@ -6,7 +6,6 @@
     grid-area: dList;
     color: #ffffff;
     font-size: 32px;
-    font-family: roboto;
     list-style: none;
     padding-left: 0;
     border-right-style: solid;
@@ -29,6 +28,19 @@
 .Head img {
     height: 350px;
     border-radius: 15px;
+}
+
+.pageSelector {
+    cursor: pointer;
+    padding: 5px;
+    color: olive;
+}
+.pageSelectorSelected {
+    padding: 5px;
+    color: white;
+}
+.pageSelector:hover{
+    font-weight: bold;
 }
 /*.Profile{*/
 /*    background-color: #4d7cae;*/

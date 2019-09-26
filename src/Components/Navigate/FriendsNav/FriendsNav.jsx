@@ -1,31 +1,28 @@
 import {NavLink} from "react-router-dom";
 import React from "react";
 import style from "./FriendsNav.module.css"
+import avatarImg from './../../../asserts/images/avatar-f.png'
 
 const FriendsNav = (props) => {
-
-
-
-
 
     return (
         <div className={style.friendsBlock}>
 
             <div className={style.ava}>
-            <NavLink to="/Profile/userid">
-                    <img src={props.friends[0].avatarImage}/>
+            <NavLink to="/Profile/2">
+                    <img src={ avatarImg }/>
             </NavLink>
             </div>
 
             <div className={style.ava}>
-            <NavLink to="/Profile/userid">
-                <img src={props.friends[1].avatarImage}/>
+            <NavLink to="/Profile/1572">
+                <img src={ avatarImg }/>
             </NavLink>
             </div>
 
             <div className={style.ava}>
-            <NavLink to="/Profile/userid">
-                <img src={props.friends[2].avatarImage}/>
+            <NavLink to="/Profile/444">
+                <img src={ avatarImg }/>
             </NavLink>
             </div>
         </div>

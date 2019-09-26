@@ -1,50 +1,15 @@
 const FOLLOW_USER = 'FOLLOW_USER';
 const UNFOLLOW_USER = 'UNFOLLOW_USER';
 const SET_USERS = 'SET_USERS';
+const SET_PAGE_NUMBER = 'SET_PAGE_NUMBER';
+const FETCHING_STATUS = 'FETCHING_STATUS';
 
 let initialState = {
-    users: [
-        {
-            name: 'Vasya',
-            id: 1,
-            avatarImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUXVCQEfmyIF2ZSm5lw4GJ5BNy-hWEeRA8X0t3MPLGztI__Srv',
-            age: 22,
-            birthDate: '25 / 07 / 1987',
-            profession: 'trubouklad4ik',
-            education: 'some school on east',
-            followed: true,
-        },
-        {
-            name: 'Anya',
-            id: 2,
-            avatarImage: 'https://cdn.freelance.ru/img/portfolio/pics/00/37/9B/3644384.jpg?mt=57607de1',
-            age: 33,
-            birthDate: '25 / 07 / 1987',
-            profession: 'trubouklad4ik',
-            education: 'some school on east',
-            followed: true,
-        },
-        {
-            name: 'Tanya',
-            id: 3,
-            avatarImage: 'https://www.w3schools.com/howto/img_avatar2.png',
-            age: 26,
-            birthDate: '25 / 07 / 1987',
-            profession: 'trubouklad4ik',
-            education: 'some school on east',
-            followed: true,
-        },
-        {
-            name: 'Grigory',
-            id: 4,
-            avatarImage: 'https://playjoor.com/assets/avatar/jenny.jpg',
-            age: 43,
-            birthDate: '25 / 07 / 1987',
-            profession: 'trubouklad4ik',
-            education: 'some school on east',
-            followed: true,
-        },
-    ],
+    users: [],
+    isFetching: false,
+    totalUsersCount: 888,
+    pageSize: 22,
+    pageNumber: 1,
 };
 
 const friendsReducer  = (state = initialState, action) => {
@@ -70,7 +35,17 @@ const friendsReducer  = (state = initialState, action) => {
                 }),
             };
         case SET_USERS:
-            return {...state, users: [...state.users, ...action.users]};
+            return {...state, users: action.users, totalUsersCount: action.totalCount};
+        case SET_PAGE_NUMBER:
+            return {
+                ...state,
+                pageNumber: action.pageNumber,
+            };
+        case FETCHING_STATUS:
+            return {
+                ...state,
+                isFetching: action.fetching,
+            };
         default:
             return state;
     }
@@ -78,6 +53,8 @@ const friendsReducer  = (state = initialState, action) => {
 
 export default friendsReducer;
 
-export const followUserAction = (userId) => ({type: FOLLOW_USER, id: userId});
-export const unFollowUserAction = (userId) => ({type: UNFOLLOW_USER, id: userId});
-export const setUsersAction = (users) => ({type: SET_USERS, users: users});
+export const followUser = (userId) => ({type: FOLLOW_USER, id: userId});
+export const unFollowUser = (userId) => ({type: UNFOLLOW_USER, id: userId});
+export const setUsers = (users, totalCount) => ({type: SET_USERS, users: users, totalCount: totalCount});
+export const setPageNumber = (pageNumber) => ({type: SET_PAGE_NUMBER, pageNumber: pageNumber});
+export const setFetchingStatus = (fetching) => ({type: FETCHING_STATUS, fetching: fetching});
