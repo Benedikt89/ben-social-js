@@ -21,7 +21,7 @@ const FriendsNav = (props) => {
             </div>
 
             <div className={style.ava}>
-            <NavLink to="/Profile/444">
+            <NavLink to="/Profile/1571">
                 <img src={ avatarImg }/>
             </NavLink>
             </div>

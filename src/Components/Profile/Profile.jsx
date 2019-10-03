@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Profile.module.css';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import FeedContainer from "./News/FeedContainer";
+import FeedContainer from "../FeedLine/FeedContainer";
 
  const Profile = (props) => {
 
@@ -14,7 +14,7 @@ import FeedContainer from "./News/FeedContainer";
                         src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
                 </div>
 
-                <ProfileInfo profile={props.profile}/>
+                <ProfileInfo {...props}/>
 
                 <FeedContainer  />
 

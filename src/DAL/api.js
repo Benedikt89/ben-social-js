@@ -14,6 +14,20 @@ export const profileAPI = {
                 return response.data;
             })
     },
+    getStatus(userId){
+        return instance.get(`https://social-network.samuraijs.com/api/1.0/profile/status/`+ userId)
+            .then(response => {
+                return response.data;
+            })
+    },
+    uploadPhoto(image){
+        let data = new FormData();
+        data.append('image',  image);
+        return instance.put(`profile/photo`, data, {headers: {'Content-Type': 'multipart/form-data'}})
+            .then(res=> {
+                return res.data;
+            })
+    },
 };
 export const usersAPI = {
     getUsers(pageNumber, pageSize){
@@ -30,6 +44,28 @@ export const usersAPI = {
     },
     unfollowUser(userId){
         return instance.delete(`follow/`+userId)
+            .then(response => {
+                return response.data
+            })
+    },
+
+};
+
+export const authAPI = {
+    getAuth(){
+        return instance.get(`auth/me`)
+            .then(response => {
+                return response.data
+            })
+    },
+    login(data){
+        return instance.post(`auth/login`, {email: data.email, password: data.password, rememberMe: data.rememberMe})
+            .then(response => {
+                return response.data
+            })
+    },
+    logOut(){
+        return instance.delete(`auth/login`)
             .then(response => {
                 return response.data
             })

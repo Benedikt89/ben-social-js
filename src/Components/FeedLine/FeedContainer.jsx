@@ -7,11 +7,7 @@ let mapStateToProps = (state) => {
         myFeed: state.feedReducer.myFeed
     }
 };
-let mapDispatchToProps = () => {
-    return {
-    }
-};
 
-const FeedContainer = connect(mapStateToProps, mapDispatchToProps)(Feed);
+const FeedContainer = connect(mapStateToProps, {})(Feed);
 
 export default FeedContainer;

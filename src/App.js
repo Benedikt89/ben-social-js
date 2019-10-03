@@ -10,6 +10,7 @@ import Settings from "./Components/Settings/Settings";
 import DialogsPageContainer from "./Components/DialogsPage/DialogsPageContainer";
 import FriendsContainer from "./Components/Friends/FriendsContainer";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
+import LoginPage from "./Components/LoginPage/LoginPage";
 
 
 const App = (props) => {
@@ -31,6 +32,7 @@ const App = (props) => {
                     <Route path="/Music" component={Music}/>
                     <Route path="/Friends" component={FriendsContainer}/>
                     <Route path="/Settings" component={Settings}/>
+                    <Route path="/Login" component={LoginPage}/>
 
 
                 </main>

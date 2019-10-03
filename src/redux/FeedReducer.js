@@ -1,9 +1,6 @@
-import {profileAPI} from "../DAL/api";
 
 const ADD_POST = 'ADD-POST';
 const POST_CHANGE_TEXT = 'POST-TEXT-CHANGE';
-const SET_PROFILE = 'SET_PROFILE';
-const FETCHING_STATUS = 'FETCHING_STATUS';
 
 let initialState = {
     users: [
@@ -57,9 +54,7 @@ let initialState = {
         }
 
     ],
-    profile: [],
     newPostText: '',
-    isFetching: false,
 };
 
 const feedReducer = (state = initialState, action) => {
@@ -82,16 +77,7 @@ const feedReducer = (state = initialState, action) => {
                 myFeed: [newPost, ...state.myFeed],
                 newPostText: ''
             };
-        case SET_PROFILE:
-            return {
-                ...state,
-                profile: action.profile,
-            };
-        case FETCHING_STATUS:
-            return {
-                ...state,
-                isFetching: action.status,
-            };
+
         default:
             return state;
     }
@@ -99,18 +85,7 @@ const feedReducer = (state = initialState, action) => {
 
 export default feedReducer;
 
-export const addPostActionCreator = () =>
+export const addPost = () =>
     ({type: ADD_POST});
-export const postChangeTextActionCreator = (text) =>
-    ({type: POST_CHANGE_TEXT, text: text,});
-export const setFetchingStatus = (status) =>
-    ({type: FETCHING_STATUS, status: status});
-export const _setProfile = (profile) =>
-    ({type: SET_PROFILE, profile: profile});
-
-export const setProfile = (userId) => (dispatch) => {
-    profileAPI.getProfile(userId)
-        .then( data => {
-            dispatch(_setProfile(data))
-        })
-};
+export const postChangeText = (text) =>
+    ({type: POST_CHANGE_TEXT, text,});

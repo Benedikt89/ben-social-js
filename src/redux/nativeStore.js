@@ -1,4 +1,4 @@
-import feedReducer from "./FeedReducer";
+import profileReducer from "./ProfileReducer";
 import dialogsReducer from "./DialogsReducer";
 import friendsReducer from "./FriendsReducer";
 
@@ -166,7 +166,7 @@ let nStore = {
     },
 
     dispatch(action) {
-        this._state.profilePage = feedReducer(this._state.profilePage, action);
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
         this._state.sideBar = friendsReducer(this._state.sideBar, action);
 

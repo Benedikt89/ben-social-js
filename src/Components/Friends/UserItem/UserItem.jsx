@@ -8,13 +8,14 @@ const UserItem = (props) => {
 
     let path = "/Profile/" + props.id;
     let userPhoto = () => {
-         if (props.user.photos === undefined) {
-              return (avatarImg);
-         } else if (props.user.photos.small === null){
-             return (avatarImg);
-         } else {
-             return props.user.photos.small;
-         }};
+        if (props.user.photos === undefined) {
+            return (avatarImg);
+        } else if (props.user.photos.small === null) {
+            return (avatarImg);
+        } else {
+            return props.user.photos.small;
+        }
+    };
 
     return (
         <div className={style.item}>
@@ -23,9 +24,13 @@ const UserItem = (props) => {
             </NavLink>
 
             <div className={style.btnBlock}>
-                {!props.user.followed?<button onClick={()=>{props.followUser(props.id)}}>
+                {!props.user.followed ? <button onClick={() => {
+                    props.followUser(props.id)
+                }}>
                     FOLLOW
-                </button>: <button onClick={()=>{props.unFollowUser(props.id)}}>
+                </button> : <button onClick={() => {
+                    props.unFollowUser(props.id)
+                }}>
                     UNFOLLOW
                 </button>}
             </div>
@@ -34,10 +39,10 @@ const UserItem = (props) => {
             </div>
 
             <div className={style.Preview}>
-                    <p>{props.user.status !== null ? props.user.status : 'nostatus'}</p>
+                <p>profession {props.user.id !== null ? props.user.id : 'noId'}</p>
             </div>
             <div className={style.Preview2}>
-                <p>profession {props.user.id !== null ? props.user.id : 'wow'}</p>
+                <p>{props.user.status !== null ? props.user.status : 'nostatus'}</p>
             </div>
         </div>
 
