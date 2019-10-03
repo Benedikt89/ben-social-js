@@ -1,30 +1,19 @@
 import React from 'react';
 import {connect} from "react-redux";
 import Friends from "./Friends";
-import * as axios from "axios";
-import {followUser, setUsers, unFollowUser, setPageNumber, setFetchingStatus} from "../../redux/FriendsReducer";
+import {followUser, setUsers, unFollowUser, setPageNumber} from "../../redux/FriendsReducer";
 
 class FriendsAPI extends React.Component {
 
     componentDidMount() {
-        this.props.setFetchingStatus(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.pageNumber}&count=${this.props.pageSize}`)
-            .then(response => {
-                this.props.setUsers(response.data.items, response.data.totalCount);
-                this.props.setFetchingStatus(false);
-            })
+        this.props.setUsers(this.props.pageNumber, this.props.pageSize);
     }
 
     pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
 
     selectPage = (pageNumber) => {
         this.props.setPageNumber(pageNumber);
-        this.props.setFetchingStatus(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.pageNumber}&count=${this.props.pageSize}`)
-            .then(response => {
-                this.props.setUsers(response.data.items, response.data.totalCount);
-                this.props.setFetchingStatus(false);
-            })
+        this.props.setUsers(this.props.pageNumber, this.props.pageSize);
     };
 
     render() {
@@ -54,6 +43,6 @@ let mapStateToProps = (state) => {
     }
 };
 
-const FriendsContainer = connect(mapStateToProps, {followUser, unFollowUser, setUsers, setPageNumber, setFetchingStatus})(FriendsAPI);
+const FriendsContainer = connect(mapStateToProps, {followUser, unFollowUser, setUsers, setPageNumber})(FriendsAPI);
 
 export default FriendsContainer;

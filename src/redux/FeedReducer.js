@@ -1,3 +1,5 @@
+import {profileAPI} from "../DAL/api";
+
 const ADD_POST = 'ADD-POST';
 const POST_CHANGE_TEXT = 'POST-TEXT-CHANGE';
 const SET_PROFILE = 'SET_PROFILE';
@@ -103,5 +105,12 @@ export const postChangeTextActionCreator = (text) =>
     ({type: POST_CHANGE_TEXT, text: text,});
 export const setFetchingStatus = (status) =>
     ({type: FETCHING_STATUS, status: status});
-export const setProfile = (profile) =>
+export const _setProfile = (profile) =>
     ({type: SET_PROFILE, profile: profile});
+
+export const setProfile = (userId) => (dispatch) => {
+    profileAPI.getProfile(userId)
+        .then( data => {
+            dispatch(_setProfile(data))
+        })
+};

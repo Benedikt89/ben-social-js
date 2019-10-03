@@ -1,3 +1,6 @@
+import * as axios from "axios";
+import {usersAPI} from "../DAL/api";
+
 const FOLLOW_USER = 'FOLLOW_USER';
 const UNFOLLOW_USER = 'UNFOLLOW_USER';
 const SET_USERS = 'SET_USERS';
@@ -53,8 +56,33 @@ const friendsReducer  = (state = initialState, action) => {
 
 export default friendsReducer;
 
-export const followUser = (userId) => ({type: FOLLOW_USER, id: userId});
-export const unFollowUser = (userId) => ({type: UNFOLLOW_USER, id: userId});
-export const setUsers = (users, totalCount) => ({type: SET_USERS, users: users, totalCount: totalCount});
+export const _followUser = (userId) => ({type: FOLLOW_USER, id: userId});
+export const _unFollowUser = (userId) => ({type: UNFOLLOW_USER, id: userId});
+export const _setUsers = (users, totalCount) => ({type: SET_USERS, users: users, totalCount: totalCount});
 export const setPageNumber = (pageNumber) => ({type: SET_PAGE_NUMBER, pageNumber: pageNumber});
 export const setFetchingStatus = (fetching) => ({type: FETCHING_STATUS, fetching: fetching});
+
+export const setUsers = (pageNumber, pageSize) => (dispatch) => {
+    dispatch(setFetchingStatus(true));
+    usersAPI.getUsers(pageNumber, pageSize)
+        .then(data => {
+            dispatch(_setUsers(data.items, data.totalCount));
+            dispatch(setFetchingStatus(false));
+        })
+};
+export const followUser = (userId) => (dispatch) => {
+    usersAPI.followUser(userId)
+        .then(data => {
+            if(data.resultCode === 0) {
+                dispatch(_followUser(userId));
+            }
+        })
+};
+export const unFollowUser = (userId)  => (dispatch) => {
+    usersAPI.unfollowUser(userId)
+        .then(data => {
+            if(data.resultCode === 0) {
+                dispatch(_unFollowUser(userId));
+            }
+        })
+};
